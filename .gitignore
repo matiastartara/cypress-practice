@@ -1,1 +1,2 @@
-cypress/.gitignore
+node_modules/
+cypress/videos/
