@@ -16,5 +16,9 @@ export class AddCandidatePage {
         cy.get('button[type=submit]').click();
     }
 
+    getToastMessage() {
+        return cy.get('.oxd-toast');
+    }
+
 }
 export default AddCandidatePage;
