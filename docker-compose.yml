@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  cypress:
+    build: .
+    container_name: cypress_runner
+    environment:
+      # Allows overriding the base URL easily via docker-compose configuration
+      - CYPRESS_baseUrl=https://opensource-demo.orangehrmlive.com
+    volumes:
+      # Mount local files so test results, screenshots, and videos are accessible on the host machine
+      - ./cypress:/app/cypress
+      - ./cypress.config.js:/app/cypress.config.js
+    # Run tests using Chrome by default inside the container
+    command: ["--browser", "chrome"]
